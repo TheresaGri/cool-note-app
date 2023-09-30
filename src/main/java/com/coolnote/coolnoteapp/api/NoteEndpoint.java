@@ -10,7 +10,6 @@ import java.util.List;
 @RequestMapping("notes")
 public class NoteEndpoint {
     private final NoteRepository noteRepository;
-
     public NoteEndpoint(NoteRepository noteRepository) {
         this.noteRepository = noteRepository;
     }
