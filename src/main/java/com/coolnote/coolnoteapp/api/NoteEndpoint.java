@@ -69,4 +69,5 @@ public class NoteEndpoint {
 
         return ResponseEntity.ok("Resource updated");
     }
+
 }
