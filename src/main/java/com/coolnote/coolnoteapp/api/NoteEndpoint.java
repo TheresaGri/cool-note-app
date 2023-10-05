@@ -10,11 +10,9 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("notes")
 public class NoteEndpoint {
     private final NoteRepository noteRepository;
-
     public NoteEndpoint(NoteRepository noteRepository) {
         this.noteRepository = noteRepository;
     }
@@ -44,8 +42,8 @@ public class NoteEndpoint {
     ResponseEntity<Note> updateNote(@PathVariable long id, @RequestBody Note noteDetails) throws NoteNotFoundException {
         Note updateNote = noteRepository.findById(id)
                 .orElseThrow(NoteNotFoundException::new);
-
         updateNote.setDescription(noteDetails.getDescription());
+        System.out.println(updateNote);
         noteRepository.save(updateNote);
         return ResponseEntity.ok(updateNote);
     }

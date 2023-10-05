@@ -11,6 +11,13 @@ public class Note {
     private long id;
     private String description;
 
+    public Note() {
+    }
+
+    public Note(String description) {
+        this.description = description;
+    }
+
     public long getId() {
         return id;
     }
