@@ -1,18 +1,19 @@
 package com.coolnote.coolnoteapp.data;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "notes")
 public class Note {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "description")
     private String description;
 
     public Note() {
     }
+
 
     public Note(String description) {
         this.description = description;
